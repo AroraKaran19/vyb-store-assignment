@@ -1,0 +1,25 @@
+.navbar {
+    margin-top: clamp(0rem, 2vw, 2.25rem);
+    top: clamp(0rem, 2vw, 1.25rem);
+}
+
+.navbar .main-nav .logo-box .vybstore-logo {
+    height: clamp(39px, 5vw, 64px);
+    width: clamp(65px, 5vw, 105px);
+}
+
+.navbar .main-nav .nav-links .navigation-link {
+    font-size: clamp(1.25rem, 2vw, 2rem);
+}
+
+.search-input {
+    font-family: "Urbanist Bold";
+    line-height: 1;
+    font-size: clamp(14px, 5vw, 16px);
+}
+
+@media (min-width: 321px) and (max-width: 1024px) {
+    .search-input {
+        font-family: "";
+    }
+}
