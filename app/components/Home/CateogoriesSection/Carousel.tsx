@@ -29,6 +29,15 @@ const Carousel = ({
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
 
+  useEffect(() => {
+    if (!carouselRef.current) return;
+    carouselRef.current.scrollTo({
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (carouselRef.current) {
       setIsDragging(true);
@@ -54,22 +63,6 @@ const Carousel = ({
   const handleMouseLeave = () => {
     setIsDragging(false);
   };
-
-  useEffect(() => {
-
-    if (!carouselRef.current) return;
-
-    const currentScrollY = () => {
-      console.log(carouselRef.current?.scrollLeft)
-    };
-
-    const carousel = carouselRef.current;
-
-    carousel.addEventListener("scroll", currentScrollY);
-    return () => {
-      carousel.removeEventListener("scroll", currentScrollY);
-    };
-  }, [])
 
   return (
     <>
@@ -98,13 +91,14 @@ const Carousel = ({
                 backgroundSize: `${item.imgSrc ? "100% 100%" : "cover"}`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center center",
+                animationDelay: `${index* 0.5}s`
               }}
             >
               <div className="carousel-item_heading text-center">{item.title}</div>
               <div className="carousel-item_subheading text-center">{item.subtitle}</div>
               <div className="carousel-item_author-info flex justify-center items-stretch bg-white px-6 py-1 rounded-2xl text-black gap-5 sm:hidden">
                 <div className="carousel-item_author_name flex items-center justify-center text-center">{item.author.name}</div>
-                {item.author.imgUrl ? <div className="carousel-item_author_photo rounded-full bg-white">
+                {item.author.imgUrl ? <div className="carousel-item_author_photo rounded-full bg-black">
                   <img src={item.author.imgUrl} alt={`${item.author.name}'s Photo`} className="rounded-full flex aspect-square max-w-5" draggable={false} />
                 </div> : <></>}
               </div>

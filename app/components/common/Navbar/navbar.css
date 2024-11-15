@@ -9,7 +9,7 @@
 }
 
 .navbar .main-nav .nav-links .navigation-link {
-    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-size: clamp(1.25rem, 2vw, 1.8rem);
 }
 
 .search-input {

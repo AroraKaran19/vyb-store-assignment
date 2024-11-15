@@ -54,8 +54,8 @@
 
 .carousel .carousel-item {
     opacity: 0;
-    height: clamp(17rem, 25vw, 30rem);
-    width: clamp(9.375rem, 25vw, 20rem);
+    height: clamp(17rem, 50vw, 30rem);
+    width: clamp(9.375rem, 50vw, 20rem);
     animation: fade 0.5s ease-in-out forwards;
     font-family: "Urbanist Bold", sans-serif;
     line-height: 1;
@@ -74,3 +74,4 @@
 .carousel .carousel-item .carousel-item_author-info {
     font-size: clamp(14px, 5vw, 18px);
 }
+
