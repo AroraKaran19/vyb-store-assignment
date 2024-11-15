@@ -3,7 +3,7 @@ import React from "react";
 const HeroSection = () => {
   return (
     <>
-      <div className="hero-section w-full flex items-stretch sm:flex-col">
+      <section id="hero" className="hero-section w-full flex items-stretch sm:flex-col">
 
         <div className="hero-section_left-side flex-1 flex flex-col">
 
@@ -44,7 +44,7 @@ const HeroSection = () => {
         <div className="hero-section_right-side flex-1 flex">
           <img src="/HeroSection.png" alt="Hero Section Image" className="hero-section-image rounded-3xl" draggable={false} />
         </div>
-      </div>
+      </section>
     </>
   );
 };

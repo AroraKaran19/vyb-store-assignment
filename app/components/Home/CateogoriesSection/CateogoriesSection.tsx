@@ -16,8 +16,8 @@ const CateogoriesSection = () => {
         subheading:
           "Turn your travel experience into itinerary, travel package with VYB Store and share it with your true followers.",
         extraSections: [
-          <div className="section-joiner-1 w-full bg-black text-white flex flex-col">
-            <div className="section-joiner-1-heading w-full text-center">
+          <div className="explore-section w-full bg-black text-white flex flex-col pb-5">
+            <div className="explore-section-heading w-full text-center">
               Explore Our Curated Travel Itineraries
             </div>
             <div className="carousel-wrapper w-full px-6 relative overflow-hidden">
@@ -64,6 +64,12 @@ const CateogoriesSection = () => {
               />
             </div>
           </div>,
+          <div className="how-to-list-section mb-32 bg-how-to-list text-white relative">
+            <div className="how-to-list-section_heading w-full text-center z-50">How To List?</div>
+            <div className="how-to-list-section_background-img left-0 right-0 max-w-full max-h-full z-[40]">
+              <img src="/ExtraSections/TravelSection2/Background.png" alt="Background Mountain" draggable={false} />
+            </div>
+          </div>
         ],
       },
     },
@@ -94,7 +100,7 @@ const CateogoriesSection = () => {
 
   return (
     <>
-      <div className="cateogories-section w-full flex flex-col">
+      <section id="cateogories" className="cateogories-section w-full flex flex-col">
         <div className="cateogories-menu w-full flex justify-between items-stretch bg-black text-white rounded-3xl ">
           {cateogoriesMenu.map((menu_item) => (
             <div
@@ -141,7 +147,7 @@ const CateogoriesSection = () => {
                     >
                       {active_menu.cat_items?.heading
                         ? active_menu.cat_items?.heading
-                        : "BLANK"}
+                        : "COMING SOON"}
                     </div>
                     <div
                       className={`category-display_subheading w-3/5 sm:w-4/5 text-center ${
@@ -152,7 +158,7 @@ const CateogoriesSection = () => {
                     >
                       {active_menu.cat_items?.subheading
                         ? active_menu.cat_items?.subheading
-                        : "No Value Provided!"}
+                        : "Coming Soon!!"}
                     </div>
                   </div>
                 </div>
@@ -170,7 +176,7 @@ const CateogoriesSection = () => {
               );
             }
           })}
-      </div>
+      </section>
     </>
   );
 };

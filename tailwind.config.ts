@@ -46,7 +46,7 @@ export default {
       },
       backgroundImage: {
         'waitlist-btn': 'linear-gradient(45deg, rgba(71,148,255,1) 20%, rgba(255,93,93,1) 80%);',
-        // 'waitlist-btn-hover': 'linear-gradient(225deg, rgba(71,148,255,1) 20%, rgba(255,93,93,1) 80%);',
+        'how-to-list': 'radial-gradient(circle at 14% 51%, #280f21ff 0%, transparent 35.05%),radial-gradient(circle at 89% 51%, #142240ff 0%, transparent 35.05%);'
       },
       backgroundSize: {
         'waitlist-btn-hover': '200px 10px',

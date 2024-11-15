@@ -104,9 +104,29 @@
     }
 }
 
-.home-page .cateogories-section .section-joiner-1 .section-joiner-1-heading {
+.home-page .cateogories-section .explore-section .explore-section-heading {
     font-family: "Urbanist Bold", sans-serif;
     font-size: clamp(20px, 5vw, 34px);
     line-height: 1;
     margin-bottom: clamp(1.5rem, 5vw, 4rem);
+}
+
+.home-page .cateogories-section > div:last-child > div, 
+.home-page .cateogories-section > div:last-child > div > div:last-child,
+.home-page .cateogories-section > div:last-child > div > div:last-child > img{
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem
+}
+
+/* Cateogories - Travel - How To List Section */
+
+.home-page .cateogories-section .how-to-list-section {
+    padding-top: clamp(1rem, 5vw, 2.75rem);
+    background-color: #000000;
+}
+
+.home-page .cateogories-section .how-to-list-section .how-to-list-section_heading {
+    font-family: "Urbanist Bold", sans-serif;
+    font-size: clamp(20px, 5vw, 34px);
+    line-height: 1;
 }
