@@ -106,7 +106,7 @@
 
 .home-page .cateogories-section .explore-section .explore-section-heading {
     font-family: "Urbanist Bold", sans-serif;
-    font-size: clamp(20px, 5vw, 34px);
+    font-size: clamp(20px, 2vw, 34px);
     line-height: 1;
     margin-bottom: clamp(1.5rem, 5vw, 4rem);
 }
