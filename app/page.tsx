@@ -5,7 +5,7 @@ import CateogoriesSection from "./components/Home/CateogoriesSection/Cateogories
 export default function Home() {
   return (
     <>
-			<div className="home-page min-h-screen w-full flex flex-col">
+			<div className="home-page w-full flex flex-col">
         <HeroSection />
         <CateogoriesSection />
       </div>

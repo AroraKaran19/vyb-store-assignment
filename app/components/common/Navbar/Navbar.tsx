@@ -179,7 +179,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="nav-links w-3/5 sm:hidden flex justify-center items-center gap-7 flex-wrap flex-shrink-0">
+          <div className="nav-links w-3/5 sm:hidden flex justify-center items-center gap-8 flex-wrap flex-shrink-0">
             {menu.map((item) => (
               <NavLinks key={item.index} {...item} />
             ))}

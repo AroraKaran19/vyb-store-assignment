@@ -52,11 +52,11 @@
 
 .home-page .cateogories-section {
     margin-top: clamp(2rem, 5vw, 4rem);
-    gap: clamp(0.5rem, 5vw, 1.5rem);
 }
 
 .home-page .cateogories-section .cateogories-menu {
     padding: clamp(0.5rem, 5vw, 2rem) clamp(0.5rem, 5vw, 2rem);
+    margin-bottom: clamp(0.5rem, 5vw, 1.5rem);
 }
 
 .home-page .cateogories-section .cateogories-menu .menu-link {
@@ -102,4 +102,11 @@
     .category-display_subheading {
         font-size: clamp(12px, 2vw, 34px);
     }
+}
+
+.home-page .cateogories-section .section-joiner-1 .section-joiner-1-heading {
+    font-family: "Urbanist Bold", sans-serif;
+    font-size: clamp(20px, 5vw, 34px);
+    line-height: 1;
+    margin-bottom: clamp(1.5rem, 5vw, 4rem);
 }

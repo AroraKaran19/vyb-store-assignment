@@ -51,6 +51,9 @@ export default {
       backgroundSize: {
         'waitlist-btn-hover': '200px 10px',
       },
+      aspectRatio: {
+        '9/16': '9 / 16',
+      },
     },
   },
   plugins: [],

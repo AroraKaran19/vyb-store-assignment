@@ -1,7 +1,10 @@
 "use client";
-import React, { act, useState } from "react";
+import React, { useState } from "react";
+import Carousel from "./Carousel";
 
 const CateogoriesSection = () => {
+
+  // Fully Customizable Cateogory Section
   const [cateogoriesMenu, setCateogoriesMenu] = useState([
     {
       index: 0,
@@ -12,6 +15,56 @@ const CateogoriesSection = () => {
         heading: "TRAVEL",
         subheading:
           "Turn your travel experience into itinerary, travel package with VYB Store and share it with your true followers.",
+        extraSections: [
+          <div className="section-joiner-1 w-full bg-black text-white flex flex-col">
+            <div className="section-joiner-1-heading w-full text-center">
+              Explore Our Curated Travel Itineraries
+            </div>
+            <div className="carousel-wrapper w-full px-6 relative overflow-hidden">
+              <Carousel
+                items={[
+                  {
+                    title: "Darjeeling Itinerary",
+                    subtitle: "West Bengal",
+                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    imgSrc: "/ExtraSections/TravelSection1/1.jpg",
+                    active: true
+                  },
+                  {
+                    title: "Munnar Itinerary",
+                    subtitle: "Kerala",
+                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    imgSrc: "/ExtraSections/TravelSection1/2.jpg",
+                  },
+                  {
+                    title: "Delhi Itinerary",
+                    subtitle: "Delhi",
+                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    imgSrc: "",
+                  },
+                  {
+                    title: "Delhi Itinerary",
+                    subtitle: "Delhi",
+                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    imgSrc: "",
+                  },
+                  {
+                    title: "Delhi Itinerary",
+                    subtitle: "Delhi",
+                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    imgSrc: "",
+                  },
+                  {
+                    title: "Delhi Itinerary",
+                    subtitle: "Delhi",
+                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    imgSrc: "",
+                  },
+                ]}
+              />
+            </div>
+          </div>,
+        ],
       },
     },
     {
@@ -71,21 +124,52 @@ const CateogoriesSection = () => {
                         : "/whiteBackground.png"
                     }
                     alt="Cateogory Display Image"
-                    className="rounded-3xl w-full aspect-video"
+                    className={`w-full aspect-video ${
+                      (active_menu.cat_items?.extraSections?.length ?? 0) > 0
+                        ? "rounded-tl-3xl rounded-tr-3xl"
+                        : "rounded-3xl"
+                    }`}
                     draggable={false}
                   />
                   <div className="category-display_text absolute w-full h-full flex flex-col justify-center items-center">
-                    <div className={`category-display_heading ${active_menu.cat_items?.heading ? "text-white" : "text-black"}`}>
-                      {active_menu.cat_items?.heading ? active_menu.cat_items?.heading : "BLANK"}
+                    <div
+                      className={`category-display_heading ${
+                        active_menu.cat_items?.imgSrc
+                          ? "text-white"
+                          : "text-black"
+                      }`}
+                    >
+                      {active_menu.cat_items?.heading
+                        ? active_menu.cat_items?.heading
+                        : "BLANK"}
                     </div>
-                    <div className={`category-display_subheading w-3/5 sm:w-4/5 text-center ${active_menu.cat_items?.subheading ? "text-white" : "text-black"}`}>
-                      {active_menu.cat_items?.subheading ? active_menu.cat_items?.subheading : "No Value Provided!"}
+                    <div
+                      className={`category-display_subheading w-3/5 sm:w-4/5 text-center ${
+                        active_menu.cat_items?.imgSrc
+                          ? "text-white"
+                          : "text-black"
+                      }`}
+                    >
+                      {active_menu.cat_items?.subheading
+                        ? active_menu.cat_items?.subheading
+                        : "No Value Provided!"}
                     </div>
                   </div>
                 </div>
               );
             })}
         </div>
+        {cateogoriesMenu
+          .filter((active_menu) => active_menu.active)
+          .map((active_menu) => {
+            if (active_menu.cat_items?.extraSections) {
+              return active_menu.cat_items?.extraSections.map(
+                (section, index) => (
+                  <div key={`extraSection-${index}`}>{section}</div>
+                )
+              );
+            }
+          })}
       </div>
     </>
   );

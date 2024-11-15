@@ -5,6 +5,7 @@
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scrollbar-color: #00DC82 #181818;
 }
 
 /* Fonts */
@@ -15,4 +16,61 @@
 @font-face {
     font-family: "Urbanist Bold";
     src: url("./fonts/Urbanist/Urbanist-Bold.ttf") format("truetype");
+}
+
+/* Carousel */
+
+@keyframes entryCarousel {
+    0% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    transform: translateX(50%);
+    scroll-behavior: smooth;
+    transition: all 0.5s ease-in-out;
+    animation: entryCarousel 2s ease-in-out forwards;
+    will-change: transform;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.carousel .carousel-item {
+    opacity: 0;
+    height: clamp(17rem, 25vw, 30rem);
+    width: clamp(9.375rem, 25vw, 20rem);
+    animation: fade 0.5s ease-in-out forwards;
+    font-family: "Urbanist Bold", sans-serif;
+    line-height: 1;
+}
+
+.carousel .carousel-item .carousel-item_heading {
+    font-size: clamp(16px, 5vw, 22px);
+    text-shadow: 0 5px 5px black;
+}
+
+.carousel .carousel-item .carousel-item_subheading {
+    font-size: clamp(14px, 5vw, 18px);
+    text-shadow: 0 5px 5px black;
+}
+
+.carousel .carousel-item .carousel-item_author-info {
+    font-size: clamp(14px, 5vw, 18px);
 }
