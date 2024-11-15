@@ -42,7 +42,7 @@ const CateogoriesSection = () => {
   return (
     <>
       <div className="cateogories-section w-full flex flex-col">
-        <div className="cateogories-menu w-full flex justify-between bg-black text-white rounded-3xl ">
+        <div className="cateogories-menu w-full flex justify-between items-stretch bg-black text-white rounded-3xl ">
           {cateogoriesMenu.map((menu_item) => (
             <div
               key={menu_item.index}
