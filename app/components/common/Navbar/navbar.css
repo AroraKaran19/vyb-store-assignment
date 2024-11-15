@@ -34,9 +34,3 @@
         opacity: 1;
     }
 }
-
-@media (min-width: 321px) and (max-width: 1024px) {
-    .search-input {
-        font-family: "";
-    }
-}

@@ -8,7 +8,7 @@ import Link from "next/link";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [navGlass, setNavGlass] = useState(false);
-  const [searchValue, setSearchValue] = useState<string>();
+  const [searchValue, setSearchValue] = useState<string>("");
   const [userMenu, setUserMenu] = useState<boolean>();
 
   // Navlink Items
@@ -186,7 +186,7 @@ const Navbar = () => {
           </div>
 
           <div className="user-menu w-max flex justify-center items-center select-none sm:hidden">
-            <div className="user-menu-wrapper bg-white flex py-3 px-4 gap-8 rounded-xl relative"
+            <div className="user-menu-wrapper bg-white flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
               onClick={() => toggleUserMenu()}
             >
               <div className="user-icon-wrapper h-full flex items-center">
@@ -217,9 +217,9 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <div className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col ${userMenu ? "flex" : "hidden"}`}>
+              <div className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col cursor-default ${userMenu ? "flex" : "hidden"}`}>
                 {userMenuOptions.map((option) => (
-                  <Link key={option.index} href={option.url} className="w-full hover:bg-white/10 px-2 py-1 rounded-md">{option.name}</Link>
+                  <Link key={option.index} href={option.url} className="w-full hover:bg-white/10 px-2 py-1 rounded-md cursor-pointer">{option.name}</Link>
                 ))}
             </div> 
             </div>
