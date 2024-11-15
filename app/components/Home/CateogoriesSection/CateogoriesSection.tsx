@@ -17,7 +17,7 @@ const CateogoriesSection = () => {
           "Turn your travel experience into itinerary, travel package with VYB Store and share it with your true followers.",
         extraSections: [
           <div className="explore-section w-full bg-black text-white flex flex-col pb-5">
-            <div className="explore-section-heading w-full text-center">
+            <div className="explore-section-heading w-full text-center px-4">
               Explore Our Curated Travel Itineraries
             </div>
             <div className="carousel-wrapper w-full px-6 relative overflow-hidden">
@@ -66,7 +66,7 @@ const CateogoriesSection = () => {
           </div>,
           <div className="how-to-list-section mb-32 bg-how-to-list text-white relative">
             <div className="how-to-list-section_heading w-full text-center z-50">How To List?</div>
-            <div className="how-to-list-section_background-img left-0 right-0 max-w-full max-h-full z-[40]">
+            <div className="how-to-list-section_background-img left-0 right-0 max-w-full max-h-full select-none z-[40]">
               <img src="/ExtraSections/TravelSection2/Background.png" alt="Background Mountain" draggable={false} />
             </div>
           </div>
