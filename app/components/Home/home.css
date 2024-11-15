@@ -1,0 +1,30 @@
+.home-page .hero-section .hero-section_left-side .hero-section_heading .heading_word {
+    padding: 1rem;
+    background-color: white;
+    color: black;
+    font-family: "Urbanist Bold", sans-serif;
+    font-size: clamp(40px, 5vw, 80px);
+    line-height: 1;
+    border-radius: 0.75rem;
+}
+.home-page .hero-section .hero-section_left-side .hero-section_heading .heading_part_3 .heading_word:last-child {
+    background-color: #00DC82;
+}
+
+.home-page .hero-section .hero-section_left-side .hero-section_para {
+    font-family: "Urbanist Bold", sans-serif;
+    font-size: clamp(24px, 5vw, 40px);
+    line-height: 1.2;
+    color: white;
+}
+
+.home-page .hero-section .hero-section_left-side .hero-section_buttons button {
+    font-family: "Urbanist Bold", sans-serif;
+    font-size: clamp(12px, 5vw, 18px);
+    line-height: 1;
+}
+
+.home-page .hero-section .hero-section_right-side .hero-section-image {
+    height: clamp(20rem, 70vw, 41.75rem);
+    width: 100%;
+}

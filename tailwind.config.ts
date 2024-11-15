@@ -44,6 +44,9 @@ export default {
           max: "1200px"
         },
       },
+      backgroundImage: {
+        'waitlist-btn': 'linear-gradient(45deg, rgba(71,148,255,1) 20%, rgba(255,93,93,1) 80%);',
+      },
     },
   },
   plugins: [],
