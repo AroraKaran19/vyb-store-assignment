@@ -18,6 +18,23 @@
     font-size: clamp(14px, 5vw, 16px);
 }
 
+.user-menu-options {
+    transform: translateY(-5%);
+    transition: transform 0.2s ease-in-out;
+    animation: swipeDown 0.5s ease-in-out forwards;
+}
+
+@keyframes swipeDown {
+    0% {
+        transform: translateY(-5%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 @media (min-width: 321px) and (max-width: 1024px) {
     .search-input {
         font-family: "";

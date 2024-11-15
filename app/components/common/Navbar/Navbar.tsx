@@ -141,7 +141,7 @@ const Navbar = () => {
 
         {/* Main Navbar */}
         <div
-          className={`main-nav w-full h-full flex items-stretch max-w-full gap-6 p-2 px-5 transition-all duration-500 ease-in-out sm:px-0 ${
+          className={`main-nav w-full h-full flex items-stretch max-w-full gap-6 p-2 px-5 transition-all duration-500 ease-in-out sm:px-4 ${
             navGlass ? "bg-white/10 backdrop-blur-lg rounded-full" : ""
           }`}
         >
@@ -217,9 +217,9 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <div className={`user-menu-options absolute top-full left-0 mt-2 p-4 gap-5 w-max bg-black text-white rounded-xl flex-col ${userMenu ? "flex" : "hidden"}`}>
+              <div className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col ${userMenu ? "flex" : "hidden"}`}>
                 {userMenuOptions.map((option) => (
-                  <Link key={option.index} href={option.url}>{option.name}</Link>
+                  <Link key={option.index} href={option.url} className="w-full hover:bg-white/10 px-2 py-1 rounded-md">{option.name}</Link>
                 ))}
             </div> 
             </div>
