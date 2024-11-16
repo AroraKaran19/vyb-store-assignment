@@ -41,7 +41,7 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !carouselRef.current) return;
     const y = e.pageY - carouselRef.current.offsetTop;
-    const walk = Math.ceil(y - startY * 1.5); // Scroll Speed
+    const walk = Math.floor(y - startY); // Scroll Speed
     carouselRef.current.scrollTo({
       top: scrollTop - walk,
       behavior: "smooth",
@@ -61,7 +61,6 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
       <div className={`get-started-carousel w-[70%] flex flex-col items-center overflow-y-auto overflow-x-clip p-4 scroll-smooth gap-[25%] relative sm:w-full ${
         isDragging ? "cursor-grabbing" : "cursor-grab"
         } ${className ? className : ""}`}
-        style={{scrollSnapType: "y mandatory"}}
         ref={carouselRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
@@ -73,8 +72,7 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
           <div key={template.heading + index} className={`get-started-template sticky top-0 left-0 w-full flex gap-5 shrink-0 rounded-3xl items-stretch select-none sm:flex-col ${template.className ? template.className : ""}`}
             style={{
               backgroundColor: template.templateColor ? template.templateColor : "white", 
-              zIndex: index,
-              scrollSnapAlign: "center"
+              zIndex: index
             }}
             draggable={false}
             >

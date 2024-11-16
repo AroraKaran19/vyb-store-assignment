@@ -295,9 +295,12 @@
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    /* -ms-overflow-style: none;
+    scrollbar-width: none; */
     /* height: calc(clamp(20rem, 25vw, 24rem) + clamp(1rem, 5vw, 2rem)); */
+    scroll-snap-type: y mandatory;
+    -webkit-scroll-snap-type: y mandatory; /* Safari */
+    -ms-scroll-snap-type: y mandatory; /* Edge 16-18 */
     height: 50vh;
 }
 
@@ -311,6 +314,9 @@
     margin: 0 clamp(1rem, 5vw, 2rem);
     aspect-ratio: 16 / 9;
     padding: clamp(0.25rem, 5vw, 2.25rem) clamp(0.25rem, 5vw, 4rem);
+    scroll-snap-align: center;
+    -webkit-scroll-snap-align: center;
+    -ms-scroll-snap-align: center;
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel .get-started-template .get-started-template_textarea {
