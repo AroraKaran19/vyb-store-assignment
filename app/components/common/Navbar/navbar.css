@@ -3,6 +3,31 @@
     top: clamp(0rem, 2vw, 1.25rem);
 }
 
+@keyframes menuHideRight {
+    0% {
+        transform: translateX(0);
+    } 100% {
+        transform: translateX(100%);
+    }
+}
+
+.navbar .nav-blur-wrapper .menu-container {
+    animation: menuHideRight 0.5s ease-in-out forwards;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes menuAppearRight {
+    0% {
+        transform: translateX(100%);
+    } 100% {
+        transform: translateX(0);
+    }
+}
+
+.navbar .nav-blur-wrapper .menu-container.open {
+    animation: menuAppearRight 0.5s ease-in-out forwards;
+}
+
 .navbar .main-nav .logo-box .vybstore-logo {
     height: clamp(39px, 5vw, 64px);
     width: clamp(65px, 5vw, 105px);

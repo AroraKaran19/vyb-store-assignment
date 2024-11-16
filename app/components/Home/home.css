@@ -218,13 +218,8 @@
 }
 
 .home-page .influencer-section .influencers-list .influencers-carousel {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     gap: clamp(1rem, 5vw, 5.9rem);
-}
-
-.home-page .influencer-section .influencers-list .influencers-carousel::-webkit-scrollbar {
-    display: none;
+    scrollbar-width: thin;
 }
 
 .home-page .influencer-section .influencers-list .influencers-carousel .influencer::before {
@@ -349,12 +344,24 @@
     }
 }
 
+@keyframes appearFromAbove {
+    0% {
+        opacity: 0;
+        transform: translateY(-5%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
 .home-page .faq-section .faq-section_content_area {
     .faq-content {
         padding: clamp(7px, 5vw, 14px) clamp(10px, 5vw, 20px);
         gap: clamp(0.25rem, 5vw, 1rem);
         font-family: "Urbanist Bold", sans-serif;
         line-height: 1.2;
+        will-change: height;
 
         .faq-content_top {
             gap: clamp(0.25rem, 5vw, 1rem);
@@ -373,6 +380,8 @@
             padding-right: calc(clamp(0.25rem, 5vw, 1rem) + 1.5rem);
             font-size: clamp(14px, 2vw, 18px);
             font-family: "Urbanist Regular", sans-serif;
+            opacity: 0;
+            animation: appearFromAbove 0.5s ease-in-out forwards;
         }
     }
 }

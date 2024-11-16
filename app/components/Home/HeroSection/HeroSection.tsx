@@ -8,14 +8,14 @@ const HeroSection = () => {
         <div className="hero-section_left-side flex-1 flex flex-col">
 
           <div className="hero-section_heading w-full flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <div className="heading_divider flex">
+            <div className="heading_divider flex flex-wrap">
               <div className="heading_word">One</div>
               <div className="heading_word">Stop</div>
             </div>
             <div className="heading_divider flex">
               <div className="heading_word">Marketplace</div>
             </div>
-            <div className="heading_divider flex">
+            <div className="heading_divider flex flex-wrap">
               <div className="heading_word">For</div>
               <div className="heading_word">Influencer</div>
             </div>

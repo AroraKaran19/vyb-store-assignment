@@ -54,7 +54,7 @@ const FAQSection = () => {
     <section id="faq" className="faq-section w-full flex items-stretch sm:flex-col">
       <div className="faq-section_textarea w-[40%] flex flex-col justify-center sm:w-full">
         <h1 className="faq-section_heading w-full text-[#00DC82] sm:text-center">FREQUENTLY ASKED QUESTIONS</h1>
-        <div className="faq-section_subheading w-full flex flex-col text-white sm:text-center">
+        <div className="faq-section_subheading w-full flex flex-col gap-2 text-white sm:text-center">
           <h2>Quick answers to questions you may have. Can't find what you're looking for?</h2>
           <h2>Check out our full documentation</h2>
         </div>

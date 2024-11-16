@@ -39,23 +39,24 @@ const Navbar = () => {
     {
       index: 0,
       name: "Profile",
-      url: "/profile"
+      url: "/profile",
     },
     {
       index: 1,
       name: "Dashboard",
-      url: "/dashboard"
+      url: "/dashboard",
     },
     {
       index: 2,
       name: "My Store",
-      url: "/my-store"
+      url: "/my-store",
     },
-  ]
+  ];
 
   // To open and close hamburger menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    console.log("clicked!")
     if (menuOpen) {
       document.body.style.overflow = "auto";
     } else {
@@ -83,7 +84,7 @@ const Navbar = () => {
   // toggle user menu
   const toggleUserMenu = () => {
     setUserMenu(!userMenu);
-  }
+  };
 
   // Close user menu on outside click
   useEffect(() => {
@@ -104,37 +105,22 @@ const Navbar = () => {
       >
         {/* Mobile Wrapper */}
         <div
-          className={`nav-wrapper top-0 left-0 hidden absolute transition-all duration-500 ease-in-out ${
+          className={`nav-blur-wrapper w-full h-screen pointer-events-none top-0 left-0 absolute transition-all duration-500 ease-in-out overflow-hidden ${
             menuOpen
-              ? "w-full h-screen bg-black/10 backdrop-blur-lg z-[1001]"
+              ? "bg-black/10 backdrop-blur-sm z-[1001]"
               : ""
           }
           }`}
         >
           <div
-            className={`menu-container bg-white w-[70vw] absolute top-0 h-screen z-[1002] ${
-              menuOpen && "open"
-            } flex flex-col gap-4 rounded-tr-2xl rounded-br-2xl`}
+            className={`menu-container bg-[#181818] w-[70vw] absolute top-0 right-0 h-screen z-[1002] ${
+              menuOpen ? "open" : ""
+            } flex flex-col gap-4 rounded-tl-3xl rounded-bl-3xl`}
           >
-            <div className="menu-header w-full h-16 flex justify-center items-center pl-14 pr-6 border-b-[1px]">
-              <VYBStoreLogo
-                className="cursor-pointer bg-black"
-                onClick={() => window.location.replace("/")}
-              />
-            </div>
-            <div className="menu-links w-full flex flex-col gap-4 items-start">
-              {menu.map((item) => (
-                <NavLinks
-                  key={item.index}
-                  {...item}
-                  mobileWrapper={setMenuOpen}
-                />
-              ))}
-            </div>
-            <div className="menu-footer w-full flex justify-center items-center">
-              <div className="authentication-wrapper h-full w-fit flex justify-center items-center rounded-full bg-black hover:bg-black/80 text-white cursor-pointer">
-                <span>Register</span>
-              </div>
+            <div className="menu-close-btn absolute top-5 right-5" onClick={toggleMenu}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="size-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
             </div>
           </div>
         </div>
@@ -186,7 +172,8 @@ const Navbar = () => {
           </div>
 
           <div className="user-menu w-max flex justify-center items-center select-none sm:hidden">
-            <div className="user-menu-wrapper bg-white flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
+            <div
+              className="user-menu-wrapper bg-white flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
               onClick={() => toggleUserMenu()}
             >
               <div className="user-icon-wrapper h-full flex items-center">
@@ -217,17 +204,28 @@ const Navbar = () => {
                   />
                 </svg>
               </div>
-              <div className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col cursor-default ${userMenu ? "flex" : "hidden"}`}>
+              <div
+                className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col cursor-default ${
+                  userMenu ? "flex" : "hidden"
+                }`}
+              >
                 {userMenuOptions.map((option) => (
-                  <Link key={option.index} href={option.url} className="w-full hover:bg-white/10 px-2 py-1 rounded-md cursor-pointer">{option.name}</Link>
+                  <Link
+                    key={option.index}
+                    href={option.url}
+                    className="w-full hover:bg-white/10 px-2 py-1 rounded-md cursor-pointer"
+                  >
+                    {option.name}
+                  </Link>
                 ))}
-            </div> 
+              </div>
             </div>
           </div>
 
           <div
             className={`hamburger-menu hidden sm:flex sm:w-max justify-start items-center select-none}`}
             draggable={false}
+            onClick={toggleMenu}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
