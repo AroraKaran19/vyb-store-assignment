@@ -17,6 +17,9 @@
 
 .navbar .nav-blur-wrapper .menu-container {
     transform: translateX(100%);
+    padding: 0 clamp(20px, 15vw, 30px);
+    padding-top: clamp(20px, 15vw, 40px);
+    color: white;
     animation: menuHideRight 0.5s ease-in-out forwards;
 }
 

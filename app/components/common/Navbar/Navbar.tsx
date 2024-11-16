@@ -112,12 +112,14 @@ const Navbar = () => {
         {/* Mobile Wrapper */}
         <div
           className={`nav-blur-wrapper w-full h-screen pointer-events-none top-0 left-0 absolute transition-all duration-500 ease-in-out overflow-hidden ${
-            menuOpen ? "bg-black/10 backdrop-blur-sm z-[1001]" : "opacity-0"
+            menuOpen
+              ? "bg-black/10 backdrop-blur-sm z-[1004] pointer-events-auto"
+              : "opacity-0"
           }
           }`}
         >
           <div
-            className={`menu-container bg-[#181818] w-[70vw] absolute top-0 right-0 h-screen z-[1002] ${
+            className={`menu-container bg-[#181818] w-[70vw] text-white absolute top-0 right-0 h-screen z-[1002] ${
               menuOpen ? "open" : ""
             } flex flex-col gap-4 rounded-tl-3xl rounded-bl-3xl`}
             ref={navbarMenu}
@@ -141,6 +143,71 @@ const Navbar = () => {
                 />
               </svg>
             </div>
+            {UserData ? (
+              <>
+                <div className="user-photo w-full flex flex-col items-center">
+                  <img
+                    src="/Authentication/defaultUser.jpg"
+                    className="size-24 flex items-center justify-center text-white rounded-full"
+                    draggable={false}
+                    alt={`img`}
+                  />
+                  <p className="my-2">{UserData.username}</p>
+                  <div
+                    className="change-profile-photo w-4/5 flex relative justify-center gap-2 text-[#00DC82] cursor-pointer select-none"
+                    onClick={() => {
+                      console.log("Change Photo");
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="#00DC82"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                      />
+                    </svg>
+                    <p className="text-center">Change Profile Picture</p>
+                  </div>
+                </div>
+                <div className="menu-links w-full flex flex-col items-center gap-4">
+                  {userMenuOptions.map((option, index) => (
+                    <Link key={index + option.index} href={option.url}>
+                      {option.name}
+                    </Link>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="authentication-btn w-full flex gap-5 px-4 py-2 bg-white active:bg-white/80 text-black rounded-2xl my-5 cursor-pointer"
+                  onClick={() => {setMenuOpen(false); router.push("/authentication")}}>
+                  <p>Login</p>
+                  <div className="login-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
 
@@ -193,7 +260,11 @@ const Navbar = () => {
           <div className="user-menu w-max flex justify-center items-center select-none sm:hidden">
             <div
               className="user-menu-wrapper bg-white active:bg-white/80 flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer transition-all duration-200 ease-in-out"
-              onClick={() => {UserData ? toggleUserMenu() : window.location.href = "/authentication"}}
+              onClick={() => {
+                UserData
+                  ? toggleUserMenu()
+                  : (window.location.href = "/authentication");
+              }}
             >
               {UserData ? (
                 <>
