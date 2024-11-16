@@ -4,6 +4,9 @@ import NavLinks from "./NavLinks";
 import VYBStoreLogo from "../VYBStoreLogo";
 import "./navbar.css";
 import Link from "next/link";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,6 +14,8 @@ const Navbar = () => {
   const [searchValue, setSearchValue] = useState<string>("");
   const [userMenu, setUserMenu] = useState<boolean>();
   const navbarMenu = useRef<HTMLDivElement>(null);
+  const UserData = useSelector((state: RootState) => state.auth.userData);
+  const router = useRouter();
 
   // Navlink Items
   const menu = [
@@ -57,7 +62,7 @@ const Navbar = () => {
   // To open and close hamburger menu
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
-    console.log("clicked!")
+    console.log("clicked!");
     if (menuOpen) {
       document.body.style.overflow = "auto";
     } else {
@@ -107,9 +112,7 @@ const Navbar = () => {
         {/* Mobile Wrapper */}
         <div
           className={`nav-blur-wrapper w-full h-screen pointer-events-none top-0 left-0 absolute transition-all duration-500 ease-in-out overflow-hidden ${
-            menuOpen
-              ? "bg-black/10 backdrop-blur-sm z-[1001]"
-              : "opacity-0"
+            menuOpen ? "bg-black/10 backdrop-blur-sm z-[1001]" : "opacity-0"
           }
           }`}
         >
@@ -119,9 +122,23 @@ const Navbar = () => {
             } flex flex-col gap-4 rounded-tl-3xl rounded-bl-3xl`}
             ref={navbarMenu}
           >
-            <div className="menu-close-btn absolute top-5 right-5" onClick={toggleMenu}>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="size-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+            <div
+              className="menu-close-btn absolute top-5 right-5"
+              onClick={toggleMenu}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="white"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
               </svg>
             </div>
           </div>
@@ -136,7 +153,7 @@ const Navbar = () => {
           <div className="logo-box w-max flex items-center">
             <VYBStoreLogo
               className="cursor-pointer"
-              onClick={() => window.location.replace("/")}
+              onClick={() => router.push("/")}
             />
           </div>
 
@@ -176,51 +193,75 @@ const Navbar = () => {
           <div className="user-menu w-max flex justify-center items-center select-none sm:hidden">
             <div
               className="user-menu-wrapper bg-white active:bg-white/80 flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer transition-all duration-200 ease-in-out"
-              onClick={() => toggleUserMenu()}
+              onClick={() => {UserData ? toggleUserMenu() : window.location.href = "/authentication"}}
             >
-              <div className="user-icon-wrapper h-full flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="black"
-                  className="size-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <div className="arrow-icon-wrapper h-full flex items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="black"
-                  className="size-4"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <div
-                className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col cursor-default ${
-                  userMenu ? "flex" : "hidden"
-                }`}
-              >
-                {userMenuOptions.map((option) => (
-                  <Link
-                    key={option.index}
-                    href={option.url}
-                    className="w-full hover:bg-white/10 px-2 py-1 rounded-md cursor-pointer"
+              {UserData ? (
+                <>
+                  <div className="user-icon-wrapper h-full flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="black"
+                      className="size-4"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div className="arrow-icon-wrapper h-full flex items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="black"
+                      className="size-4"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <div
+                    className={`user-menu-options absolute top-full left-0 mt-2 py-4 px-2 gap-2 bg-[#0a0a0a] text-white w-[150%] rounded-xl flex-col cursor-default ${
+                      userMenu ? "flex" : "hidden"
+                    }`}
                   >
-                    {option.name}
-                  </Link>
-                ))}
-              </div>
+                    {userMenuOptions.map((option) => (
+                      <Link
+                        key={option.index}
+                        href={option.url}
+                        className="w-full hover:bg-white/10 px-2 py-1 rounded-md cursor-pointer"
+                      >
+                        {option.name}
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <p>Login</p>
+                  <div className="login-icon">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                      />
+                    </svg>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
