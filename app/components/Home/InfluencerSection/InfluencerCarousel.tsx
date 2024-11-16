@@ -64,7 +64,7 @@ const InfluencerCarousel = ({ influencerData, className }: InfluencerCarouselPro
         onMouseLeave={handleMouseLeave}
       >
       {influencerData.map((influencer, index) => (
-        <div key={influencer.name + index} className="influencer h-full flex flex-col rounded-full select-none shrink-0 hover:cursor-pointer relative"
+        <div key={influencer.name + index} className="influencer flex flex-col rounded-full select-none shrink-0 hover:cursor-pointer relative"
           onClick={influencer.redirectUrl ? () => { window.location.href = influencer.redirectUrl } : undefined}>
           <img
             src={influencer.imgUrl ? influencer.imgUrl : ""}

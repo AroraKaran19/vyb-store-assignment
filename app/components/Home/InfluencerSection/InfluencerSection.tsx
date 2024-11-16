@@ -30,7 +30,7 @@ const InfluencerSection = () => {
     <>
       <section id='out-influencers' className="influencer-section w-full flex flex-col">
         <div className="influencer-section_heading w-full text-center text-[#00DC82]">Our Influencers</div>
-        <div className="influencers-list flex gap-8 px-5">
+        <div className="influencers-list flex px-5">
           <InfluencerCarousel influencerData={influencers} />
         </div>
       </section>
