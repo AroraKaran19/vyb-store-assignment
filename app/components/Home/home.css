@@ -151,7 +151,7 @@
 /* Monitization Section */
 
 .home-page .monitization-section {
-    padding-top: clamp(1rem, 5vw, 2rem);
+    padding-top: clamp(2rem, 5vw, 2rem);
     gap: clamp(0.5rem, 5vw, 2.25rem);
 }
 
@@ -207,8 +207,8 @@
 /* Influencer Section */
 
 .home-page .influencer-section {
-    padding-top: clamp(1rem, 5vw, 3rem);
-    gap: clamp(0.5rem, 15vw, 2.25rem);
+    padding-top: clamp(2rem, 5vw, 3rem);
+    gap: clamp(0.5rem, 5vw, 2.25rem);
 }
 
 .home-page .influencer-section .influencer-section_heading {
@@ -284,8 +284,8 @@
 /* Get Started Section */
 
 .home-page .get-started-section {
-    padding-top: clamp(1rem, 5vw, 3rem);
-    gap: clamp(0.5rem, 15vw, 2.25rem);
+    padding-top: clamp(2rem, 5vw, 3rem);
+    gap: clamp(0.5rem, 5vw, 2.25rem);
 }
 
 .home-page .get-started-section .get-started-section_heading {
@@ -332,6 +332,53 @@
 /* FAQ Section */
 
 .home-page .faq-section {
-    padding-top: clamp(1rem, 5vw, 3rem);
-    gap: clamp(0.5rem, 15vw, 2.25rem);
+    padding: clamp(2rem, 5vw, 3rem) 0;
+    gap: clamp(0.5rem, 5vw, 2.25rem);
+}
+
+.home-page .faq-section .faq-section_textarea {
+    font-family: "Urbanist Bold", sans-serif;
+    line-height: 1.2;
+    gap: clamp(0.25rem, 2vw, 1.25rem);
+
+    .faq-section_heading {
+        font-size: clamp(20px, 5vw, 44px);
+    }
+    .faq-section_subheading {
+        font-size: clamp(14px, 5vw, 22px);
+    }
+}
+
+.home-page .faq-section .faq-section_content_area {
+    .faq-content {
+        padding: clamp(7px, 5vw, 14px) clamp(10px, 5vw, 20px);
+        gap: clamp(0.25rem, 5vw, 1rem);
+        font-family: "Urbanist Bold", sans-serif;
+        line-height: 1.2;
+
+        .faq-content_top {
+            gap: clamp(0.25rem, 5vw, 1rem);
+
+            .faq-content_question {
+                font-size: clamp(14px, 2vw, 18px);
+            }
+
+            .faq-content_btn svg {
+                height: clamp(1rem, 5vw, 1.5rem);
+                aspect-ratio: 1 / 1;
+            }
+        }
+
+        .faq-content_answer {
+            padding-right: calc(clamp(0.25rem, 5vw, 1rem) + 1.5rem);
+            font-size: clamp(14px, 2vw, 18px);
+            font-family: "Urbanist Regular", sans-serif;
+        }
+    }
+}
+
+@media (min-width: 321px) and (max-width: 1024px) {
+    .home-page .faq-section .faq-section_content_area .faq-content .faq-content_answer {
+        padding: 0;
+    }
 }
