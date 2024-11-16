@@ -230,13 +230,15 @@
 .home-page .influencer-section .influencers-list .influencers-carousel .influencer::before {
     content: "";
     position: absolute;
-    top: clamp(2px, 2vw, 10px);
-    left: clamp(2px, 2vw, 10px);
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: -30%;
+    transform: translateX(50%);
+    width: 80%;
+    height: 80%;
     background: linear-gradient(270deg, #00DBDE 0%, #FC00FF 100%);
     z-index: -1;
     border-radius: 9999px;
+    transition: all 0.5s ease-in-out;
 }
 
 .home-page .influencer-section .influencers-list .influencers-carousel .influencer .influencer-image {
@@ -270,4 +272,11 @@
     .influencer-name {
         display: block;
     }
+}
+.home-page .influencer-section .influencers-list .influencers-carousel .influencer:hover::before {
+    top: clamp(2px, 2vw, 10px);
+    left: clamp(2px, 2vw, 10px);
+    transform: translateX(0%);
+    width: 100%;
+    height: 100%;
 }
