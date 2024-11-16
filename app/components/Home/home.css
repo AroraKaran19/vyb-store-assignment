@@ -295,28 +295,19 @@
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel {
-    /* -ms-overflow-style: none;
-    scrollbar-width: none; */
-    /* height: calc(clamp(20rem, 25vw, 24rem) + clamp(1rem, 5vw, 2rem)); */
     scroll-snap-type: y mandatory;
-    -webkit-scroll-snap-type: y mandatory; /* Safari */
-    -ms-scroll-snap-type: y mandatory; /* Edge 16-18 */
+    -webkit-scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
     height: 50vh;
 }
 
-.home-page .get-started-section .get-started-section_templates .get-started-carousel::-webkit-scrollbar {
-    display: none;
-}
-
 .home-page .get-started-section .get-started-section_templates .get-started-carousel .get-started-template {
-    height: calc(100% - clamp(1rem, 5vw, 2rem));
-    width: calc(100%);
     margin: 0 clamp(1rem, 5vw, 2rem);
     aspect-ratio: 16 / 9;
     padding: clamp(0.25rem, 5vw, 2.25rem) clamp(0.25rem, 5vw, 4rem);
-    scroll-snap-align: center;
-    -webkit-scroll-snap-align: center;
-    -ms-scroll-snap-align: center;
+    scroll-snap-align: top;
+    -webkit-scroll-snap-align: top;
+    -ms-scroll-snap-align: top;
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel .get-started-template .get-started-template_textarea {
@@ -334,5 +325,5 @@
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel .get-started-template .get-started-template_image img {
-    max-height: clamp(10rem, 5vw, 19rem);
+    max-height: clamp(10rem, 25vw, 19rem);
 }

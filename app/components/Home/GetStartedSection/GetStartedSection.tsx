@@ -16,7 +16,7 @@ const GetStartedSection = () => {
       paragraph: "Let VYB the money now !! Its here and widthdraw it periodically.",
       imgSrc: "/GetStartedSection/2.png",
       templateColor: "#5ED46A",
-      className: "-rotate-[3deg]",
+      className: "-rotate-[2deg]",
     },
     {
       heading: "Sign Up and create your own store hassle-free.",
@@ -30,7 +30,7 @@ const GetStartedSection = () => {
       paragraph: "Join us via google signin and verify your influencer status by entering you social media Id and unlock your store @ zero cost.",
       imgSrc: "/GetStartedSection/4.png",
       templateColor: "#5CAAB6",
-      className: "-rotate-[3deg]",
+      className: "-rotate-[2deg]",
     },
   ]
 

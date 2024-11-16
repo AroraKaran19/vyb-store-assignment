@@ -28,7 +28,7 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
       top: 0,
       behavior: "smooth",
     });
-  }, []);
+  }, [templateData]);
   
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
     if (carouselRef.current) {
@@ -58,7 +58,7 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
 
   return (
     <>
-      <div className={`get-started-carousel w-[70%] flex flex-col items-center overflow-y-auto overflow-x-clip p-4 scroll-smooth gap-[25%] relative sm:w-full ${
+      <div className={`get-started-carousel w-[70%] flex flex-col items-center overflow-y-auto overflow-x-clip p-4 scroll-smooth gap-[10%] relative sm:w-full ${
         isDragging ? "cursor-grabbing" : "cursor-grab"
         } ${className ? className : ""}`}
         ref={carouselRef}
@@ -69,7 +69,7 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
         draggable={false}
       >
         {templateData.map((template, index) => (
-          <div key={template.heading + index} className={`get-started-template sticky top-0 left-0 w-full flex gap-5 shrink-0 rounded-3xl items-stretch select-none sm:flex-col ${template.className ? template.className : ""}`}
+          <div key={template.heading + index} className={`get-started-template sticky top-0 left-0 w-full h-[90%] gap-5 flex shrink-0 rounded-3xl items-stretch select-none sm:flex-col ${template.className ? template.className : ""}`}
             style={{
               backgroundColor: template.templateColor ? template.templateColor : "white", 
               zIndex: index
