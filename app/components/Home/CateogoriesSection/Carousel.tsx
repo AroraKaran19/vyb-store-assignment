@@ -67,7 +67,7 @@ const Carousel = ({
   return (
     <>
       <div
-        className={`carousel w-full flex items-center gap-10 overflow-x-scroll overflow-y-clip ${
+        className={`carousel w-full flex items-center gap-10 overflow-x-auto ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         } ${className ? className : ""}`}
         ref={carouselRef}

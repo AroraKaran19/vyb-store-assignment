@@ -2,6 +2,7 @@ import HeroSection from "./components/Home/HeroSection/HeroSection";
 import "./components/Home/home.css";
 import CateogoriesSection from "./components/Home/CateogoriesSection/CateogoriesSection";
 import MonitizationSection from "./components/Home/MonitizationSection/MonitizationSection";
+import InfluencerSection from "./components/Home/InfluencerSection/InfluencerSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         <HeroSection />
         <CateogoriesSection />
         <MonitizationSection />
+        <InfluencerSection />
       </div>
     </>
   );
