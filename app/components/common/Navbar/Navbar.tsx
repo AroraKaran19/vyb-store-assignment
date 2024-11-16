@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import NavLinks from "./NavLinks";
 import VYBStoreLogo from "../VYBStoreLogo";
 import "./navbar.css";
@@ -10,6 +10,7 @@ const Navbar = () => {
   const [navGlass, setNavGlass] = useState(false);
   const [searchValue, setSearchValue] = useState<string>("");
   const [userMenu, setUserMenu] = useState<boolean>();
+  const navbarMenu = useRef<HTMLDivElement>(null);
 
   // Navlink Items
   const menu = [
@@ -108,7 +109,7 @@ const Navbar = () => {
           className={`nav-blur-wrapper w-full h-screen pointer-events-none top-0 left-0 absolute transition-all duration-500 ease-in-out overflow-hidden ${
             menuOpen
               ? "bg-black/10 backdrop-blur-sm z-[1001]"
-              : ""
+              : "opacity-0"
           }
           }`}
         >
@@ -116,6 +117,7 @@ const Navbar = () => {
             className={`menu-container bg-[#181818] w-[70vw] absolute top-0 right-0 h-screen z-[1002] ${
               menuOpen ? "open" : ""
             } flex flex-col gap-4 rounded-tl-3xl rounded-bl-3xl`}
+            ref={navbarMenu}
           >
             <div className="menu-close-btn absolute top-5 right-5" onClick={toggleMenu}>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="white" className="size-6">

@@ -54,6 +54,20 @@ export default {
       aspectRatio: {
         '9/16': '9 / 16',
       },
+      keyframes: {
+        "menuAppear": {
+          '0%': { transform: "translateX(100%)" },
+          '100%': { transform: "translateX(0)" }
+        },
+        "menuExit" : {
+          '0%': { transform: "translateX(0)" },
+          '100%': { transform: "translateX(100%)" }
+        }
+      },
+      animation: {
+        "navMenuAppear": "menuAppear 0.5s ease-in-out forwards",
+        "navMenuExit": "menuExit 0.5s ease-in-out forwards",
+      }
     },
   },
   plugins: [],
