@@ -218,7 +218,7 @@
 }
 
 .home-page .influencer-section .influencers-list .influencers-carousel {
-    gap: clamp(1rem, 5vw, 5.9rem);
+    gap: clamp(1rem, 5vw, 5.5rem);
     scrollbar-width: thin;
 }
 

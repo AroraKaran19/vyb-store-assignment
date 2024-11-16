@@ -1,0 +1,44 @@
+/* Sorry for being messy */
+
+.authentication-page .authentication-wrapper {
+    padding: clamp(15px, 5vw, 30px) 0;
+
+    .authentication-container {
+        padding: clamp(0rem, 5vw, 2.25rem);
+        gap: clamp(0.5rem, 5vw, 2.25rem);
+
+        .authentication-container_image img {
+            max-height: clamp(20rem, 50vw, 34rem);
+        }
+
+        .authentication-authform {
+            font-family: "Urbanist Bold", sans-serif;
+            line-height: 1.2;
+    
+            .authentication-authform_heading {
+                padding-top: clamp(0.5rem, 5vw, 1.875rem);
+                font-size: clamp(20px, 5vw, 40px);
+            }
+            .authentication-googleauth {
+                padding: 0.5rem;
+
+                img {
+                    height: clamp(14px, 5vw, 20px);
+                    aspect-ratio: 1 / 1;
+                }
+                p {
+                    font-family: "Urbanist Regular", sans-serif;
+                    font-size: clamp(14px, 5vw, 20px);
+                }
+            }
+            .authform-breakpoint {
+                font-size: clamp(14px, 5vw, 24px);
+            }
+
+            .authform-emailauth input {
+                font-size: clamp(14px, 5vw, 26px);
+            }
+        }
+    }
+
+}

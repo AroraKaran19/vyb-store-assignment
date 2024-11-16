@@ -8,6 +8,10 @@
     scrollbar-color: #00DC82 #181818;
 }
 
+/* main {
+    min-height: calc(100vh - calc(clamp(60px, 5vw, 80px) + clamp(0rem, 5vw, 4.5rem)));
+} */
+
 /* Fonts */
 @font-face {
     font-family: "Urbanist Regular";

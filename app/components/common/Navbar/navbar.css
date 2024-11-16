@@ -11,6 +11,10 @@
     }
 }
 
+.navbar .nav-blur-wrapper {
+    height: calc(100vh - calc(clamp(60px, 5vw, 80px) + clamp(0rem, 2vw, 2.25rem)));;
+}
+
 .navbar .nav-blur-wrapper .menu-container {
     transform: translateX(100%);
     animation: menuHideRight 0.5s ease-in-out forwards;

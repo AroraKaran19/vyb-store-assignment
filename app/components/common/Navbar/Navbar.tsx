@@ -175,7 +175,7 @@ const Navbar = () => {
 
           <div className="user-menu w-max flex justify-center items-center select-none sm:hidden">
             <div
-              className="user-menu-wrapper bg-white flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer hover:scale-105 transition-all duration-500 ease-in-out"
+              className="user-menu-wrapper bg-white active:bg-white/80 flex py-3 px-4 gap-8 rounded-xl relative cursor-pointer transition-all duration-200 ease-in-out"
               onClick={() => toggleUserMenu()}
             >
               <div className="user-icon-wrapper h-full flex items-center">
