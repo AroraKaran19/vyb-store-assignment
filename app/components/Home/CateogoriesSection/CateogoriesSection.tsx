@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Carousel from "./Carousel";
 
 const CateogoriesSection = () => {
-
   // Fully Customizable Cateogory Section
   const [cateogoriesMenu, setCateogoriesMenu] = useState([
     {
@@ -26,50 +25,94 @@ const CateogoriesSection = () => {
                   {
                     title: "Darjeeling Itinerary",
                     subtitle: "West Bengal",
-                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
                     imgSrc: "/ExtraSections/TravelSection1/1.jpg",
-                    active: true
+                    active: true,
                   },
                   {
                     title: "Munnar Itinerary",
                     subtitle: "Kerala",
-                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
                     imgSrc: "/ExtraSections/TravelSection1/2.jpg",
                   },
                   {
                     title: "Delhi Itinerary",
                     subtitle: "Delhi",
-                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
                     imgSrc: "",
                   },
                   {
                     title: "Delhi Itinerary",
                     subtitle: "Delhi",
-                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
                     imgSrc: "",
                   },
                   {
                     title: "Delhi Itinerary",
                     subtitle: "Delhi",
-                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
                     imgSrc: "",
                   },
                   {
                     title: "Delhi Itinerary",
                     subtitle: "Delhi",
-                    author: { name: "Samira Hadid", imgUrl: "/ExtraSections/TravelSection1/Authors/Author_1.jpg" },
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
                     imgSrc: "",
                   },
                 ]}
               />
             </div>
           </div>,
-          <div className="how-to-list-section mb-32 bg-how-to-list text-white relative">
-            <div className="how-to-list-section_heading w-full text-center z-50">How To List?</div>
-            <div className="how-to-list-section_background-img left-0 right-0 max-w-full max-h-full select-none z-[40]">
-              <img src="/ExtraSections/TravelSection2/Background.png" alt="Background Mountain" draggable={false} />
+          <div className="how-to-list-section mb-32 bg-how-to-list text-white flex flex-col gap-4">
+            <div className="how-to-list-section_heading w-full text-center z-50">
+              How To List?
             </div>
-          </div>
+            <div className="how-to-list_planes-container h-full w-full max-w-full flex flex-col relative">
+              <img
+                src="/ExtraSections/TravelSection2/PlaneSection.png"
+                alt="Plane Section"
+                className="w-full antialiased z-50"
+                draggable={false}
+              />
+              <div className="how-to-list-section_endline w-full flex justify-center items-end pb-5 sm:p-16 sm:relative">
+                <p className="z-50 text-center select-none">You Curate Experience, We Make It Happen</p>
+                <div
+                  className="how-to-list-section_background absolute w-full h-full max-w-full bottom-0 right-0 left-0 opacity-80"
+                  style={{
+                    backgroundImage:
+                      "url('/ExtraSections/TravelSection2/Background.png')",
+                    backgroundPosition: "center center",
+                    backgroundSize: "cover",
+                    aspectRatio: 16 / 9,
+                  }}
+                ></div>
+              </div>
+            </div>
+          </div>,
         ],
       },
     },
@@ -100,7 +143,10 @@ const CateogoriesSection = () => {
 
   return (
     <>
-      <section id="cateogories" className="cateogories-section w-full flex flex-col">
+      <section
+        id="cateogories"
+        className="cateogories-section w-full flex flex-col"
+      >
         <div className="cateogories-menu w-full flex justify-between items-stretch bg-black text-white rounded-3xl ">
           {cateogoriesMenu.map((menu_item) => (
             <div

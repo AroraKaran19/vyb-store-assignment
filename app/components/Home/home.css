@@ -113,7 +113,8 @@
 
 .home-page .cateogories-section > div:last-child > div, 
 .home-page .cateogories-section > div:last-child > div > div:last-child,
-.home-page .cateogories-section > div:last-child > div > div:last-child > img{
+.home-page .cateogories-section > div:last-child > div > div:last-child > div:last-child,
+.home-page .cateogories-section > div:last-child > div > div:last-child > div:last-child > div{
     border-bottom-left-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem
 }
@@ -129,4 +130,20 @@
     font-family: "Urbanist Bold", sans-serif;
     font-size: clamp(20px, 5vw, 34px);
     line-height: 1;
+    margin-bottom: clamp(0.5rem, 4vw, 5rem);
+}
+
+.home-page .cateogories-section .how-to-list-section .how-to-list_planes-container {
+    gap: clamp(0.5rem, 15vw, 15rem);
+}
+
+.home-page .cateogories-section .how-to-list-section .how-to-list_planes-container .how-to-list-section_endline {
+    font-size: clamp(18px, 2vw, 34px);
+    line-height: 1;
+}
+
+@media (min-width: 499px) and (max-width: 1024px) {
+    .home-page .cateogories-section .how-to-list-section .how-to-list_planes-container .how-to-list-section_endline {
+        padding: clamp(5rem, 17vw, 9rem) clamp(8rem, 5vw, 16rem);
+    }
 }
