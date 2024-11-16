@@ -147,3 +147,51 @@
         padding: clamp(5rem, 17vw, 9rem) clamp(8rem, 5vw, 16rem);
     }
 }
+
+/* Monitization Section */
+
+.home-page .monitization-section {
+    padding-top: clamp(1rem, 5vw, 3rem);
+    gap: clamp(0.5rem, 5vw, 1.25rem);
+}
+
+.home-page .monitization-section .monitization-section_textarea p {
+    font-family: "Urbanist Bold", sans-serif;
+    font-size: clamp(24px, 5vw, 40px);
+    line-height: 1.2;
+}
+
+.home-page .monitization-section .monitization-section_content-container {
+    gap: clamp(0.5rem, 5vw, 1.25rem);
+}
+
+.home-page .monitization-section .monitization-section_content-container .monitization-content-container-column {
+    gap: clamp(0.5rem, 5vw, 1.25rem);
+}
+
+.home-page .monitization-section .monitization-section_content-container .monitization-content-container-column .monitization-content-box {
+    padding: clamp(1rem, 5vw, 2.5rem);
+    font-family: "Urbanist Bold", sans-serif;
+    gap: clamp(0.25rem, 5vw, 1rem);
+    
+    .monitization-content-box_heading {
+        font-size: clamp(18px, 4vw, 34px);
+        line-height: 1.2;
+    }
+    .monitization-content-box_subheading {
+        font-size: clamp(12px, 4vw, 18px);
+        line-height: 1.2;
+    }
+
+    .monitization-content-box_image {
+        height: clamp(7rem, 15vw, 12rem);
+        width: clamp(8.5rem, 15vw, 13rem);
+    }
+}
+
+@media (min-width: 321px) and (max-width: 1024px) {
+    .home-page .monitization-section .monitization-section_content-container .monitization-content-container-column .monitization-content-box .monitization-content-box_subheading {
+        font-family: "Urbanist Regular", sans-serif;
+        line-height: 1;
+    }
+}

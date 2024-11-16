@@ -1,6 +1,7 @@
 import HeroSection from "./components/Home/HeroSection/HeroSection";
 import "./components/Home/home.css";
 import CateogoriesSection from "./components/Home/CateogoriesSection/CateogoriesSection";
+import MonitizationSection from "./components/Home/MonitizationSection/MonitizationSection";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
 			<div className="home-page w-full flex flex-col">
         <HeroSection />
         <CateogoriesSection />
+        <MonitizationSection />
       </div>
     </>
   );

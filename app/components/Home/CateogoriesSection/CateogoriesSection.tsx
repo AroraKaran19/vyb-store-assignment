@@ -87,7 +87,7 @@ const CateogoriesSection = () => {
               />
             </div>
           </div>,
-          <div className="how-to-list-section mb-32 bg-how-to-list text-white flex flex-col gap-4">
+          <div className="how-to-list-section bg-how-to-list text-white flex flex-col gap-4">
             <div className="how-to-list-section_heading w-full text-center z-50">
               How To List?
             </div>
