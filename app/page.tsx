@@ -4,6 +4,7 @@ import CateogoriesSection from "./components/Home/CateogoriesSection/Cateogories
 import MonitizationSection from "./components/Home/MonitizationSection/MonitizationSection";
 import InfluencerSection from "./components/Home/InfluencerSection/InfluencerSection";
 import GetStartedSection from "./components/Home/GetStartedSection/GetStartedSection";
+import FAQSection from "./components/Home/FAQSection/FAQSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <MonitizationSection />
         <InfluencerSection />
         <GetStartedSection />
+        <FAQSection />
       </div>
     </>
   );

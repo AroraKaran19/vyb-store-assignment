@@ -42,7 +42,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="hero-section_right-side flex-1 flex">
-          <img src="/HeroSection.png" alt="Hero Section Image" className="hero-section-image rounded-3xl" draggable={false} />
+          <img src="/Home/HeroSection/HeroSection.png" alt="Hero Section Image" className="hero-section-image rounded-3xl" draggable={false} />
         </div>
       </section>
     </>

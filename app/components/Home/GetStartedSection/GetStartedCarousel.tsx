@@ -69,19 +69,19 @@ const GetStartedCarousel = ({ templateData, className, autoChange, interval } : 
         draggable={false}
       >
         {templateData.map((template, index) => (
-          <div key={template.heading + index} className={`get-started-template sticky top-0 left-0 w-full h-[90%] gap-5 flex shrink-0 rounded-3xl items-stretch select-none sm:flex-col ${template.className ? template.className : ""}`}
+          <div key={template.heading + index} className={`get-started-template sticky top-0 left-0 w-full h-[90%] flex shrink-0 rounded-3xl gap-2 items-stretch select-none sm:flex-col ${template.className ? template.className : ""}`}
             style={{
               backgroundColor: template.templateColor ? template.templateColor : "white", 
               zIndex: index
             }}
             draggable={false}
             >
-            <div className="get-started-template_textarea w-3/5 h-full flex flex-col justify-center items-center text-white gap-5 sm:h-fit sm:w-full">
+            <div className="get-started-template_textarea w-3/5 h-full flex flex-col justify-center items-center text-white gap-2 sm:max-h-max sm:w-full">
               <div className="get-started-template_heading w-4/5 sm:w-full">{template.heading}</div>
               <div className="get-started-template_paragraph w-4/5 sm:w-full">{template.paragraph}</div>
             </div>
-            <div className="get-started-template_image w-2/5 h-full flex justify-center aspect-square sm:w-fit sm:place-self-center">
-              <img src={template.imgSrc ? template.imgSrc : ""} alt={`${template.heading} Image`} draggable={false} />
+            <div className="get-started-template_image w-2/5 h-full flex items-center justify-center sm:w-full sm:items-start sm:h-auto">
+              <img src={template.imgSrc ? template.imgSrc : ""} alt={`${template.heading} Image`} className="text-center" draggable={false} />
             </div>
           </div>
         ))}

@@ -6,24 +6,24 @@ const MonitizationSection = () => {
       {
         heading: "Trusted By Influencers",
         subheading: "A trusted platform for influencers to grow and earn.",
-        imgUrl: "/MonitizationSection/1.png",
+        imgUrl: "/Home/MonitizationSection/1.png",
       },
       {
         heading: "Trusted By Influencers",
         subheading: "A trusted platform for influencers to grow and earn.",
-        imgUrl: "/MonitizationSection/2.png",
+        imgUrl: "/Home/MonitizationSection/2.png",
       },
     ],
     [
       {
         heading: "Trusted By Influencers",
         subheading: "A trusted platform for influencers to grow and earn.",
-        imgUrl: "/MonitizationSection/3.png",
+        imgUrl: "/Home/MonitizationSection/3.png",
       },
       {
         heading: "Trusted By Influencers",
         subheading: "A trusted platform for influencers to grow and earn.",
-        imgUrl: "/MonitizationSection/4.png",
+        imgUrl: "/Home/MonitizationSection/4.png",
       },
     ],
   ];

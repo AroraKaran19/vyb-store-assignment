@@ -6,22 +6,22 @@ const InfluencerSection = () => {
   const influencers = [
     {
       name: "Samira",
-      imgUrl: "/InfluencerSection/1.jpg",
+      imgUrl: "/Home/InfluencerSection/1.jpg",
       redirectUrl: ""
     },
     {
       name: "Jay",
-      imgUrl: "/InfluencerSection/2.jpg",
+      imgUrl: "/Home/InfluencerSection/2.jpg",
       redirectUrl: ""
     },
     {
       name: "Samira",
-      imgUrl: "/InfluencerSection/3.jpg",
+      imgUrl: "/Home/InfluencerSection/3.jpg",
       redirectUrl: ""
     },
     {
       name: "Samira",
-      imgUrl: "/InfluencerSection/4.jpg",
+      imgUrl: "/Home/InfluencerSection/4.jpg",
       redirectUrl: ""
     }
   ]

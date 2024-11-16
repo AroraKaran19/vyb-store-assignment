@@ -28,9 +28,9 @@ const CateogoriesSection = () => {
                     author: {
                       name: "Samira Hadid",
                       imgUrl:
-                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                        "/Home/ExtraSections/TravelSection1/Authors/Author_1.jpg",
                     },
-                    imgSrc: "/ExtraSections/TravelSection1/1.jpg",
+                    imgSrc: "/Home/ExtraSections/TravelSection1/1.jpg",
                     active: true,
                   },
                   {
@@ -39,9 +39,9 @@ const CateogoriesSection = () => {
                     author: {
                       name: "Samira Hadid",
                       imgUrl:
-                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                        "/Home/ExtraSections/TravelSection1/Authors/Author_1.jpg",
                     },
-                    imgSrc: "/ExtraSections/TravelSection1/2.jpg",
+                    imgSrc: "/Home/ExtraSections/TravelSection1/2.jpg",
                   },
                   {
                     title: "Delhi Itinerary",
@@ -49,17 +49,7 @@ const CateogoriesSection = () => {
                     author: {
                       name: "Samira Hadid",
                       imgUrl:
-                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
-                    },
-                    imgSrc: "",
-                  },
-                  {
-                    title: "Delhi Itinerary",
-                    subtitle: "Delhi",
-                    author: {
-                      name: "Samira Hadid",
-                      imgUrl:
-                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                        "/Home/ExtraSections/TravelSection1/Authors/Author_1.jpg",
                     },
                     imgSrc: "",
                   },
@@ -69,7 +59,7 @@ const CateogoriesSection = () => {
                     author: {
                       name: "Samira Hadid",
                       imgUrl:
-                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                        "/Home/ExtraSections/TravelSection1/Authors/Author_1.jpg",
                     },
                     imgSrc: "",
                   },
@@ -79,7 +69,17 @@ const CateogoriesSection = () => {
                     author: {
                       name: "Samira Hadid",
                       imgUrl:
-                        "/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                        "/Home/ExtraSections/TravelSection1/Authors/Author_1.jpg",
+                    },
+                    imgSrc: "",
+                  },
+                  {
+                    title: "Delhi Itinerary",
+                    subtitle: "Delhi",
+                    author: {
+                      name: "Samira Hadid",
+                      imgUrl:
+                        "/Home/ExtraSections/TravelSection1/Authors/Author_1.jpg",
                     },
                     imgSrc: "",
                   },
@@ -93,7 +93,7 @@ const CateogoriesSection = () => {
             </div>
             <div className="how-to-list_planes-container h-full w-full max-w-full flex flex-col relative">
               <img
-                src="/ExtraSections/TravelSection2/PlaneSection.png"
+                src="/Home/ExtraSections/TravelSection2/PlaneSection.png"
                 alt="Plane Section"
                 className="w-full antialiased z-50"
                 draggable={false}
@@ -104,7 +104,7 @@ const CateogoriesSection = () => {
                   className="how-to-list-section_background absolute w-full h-full max-w-full bottom-0 right-0 left-0 opacity-80"
                   style={{
                     backgroundImage:
-                      "url('/ExtraSections/TravelSection2/Background.png')",
+                      "url('/Home/ExtraSections/TravelSection2/Background.png')",
                     backgroundPosition: "center center",
                     backgroundSize: "cover",
                     aspectRatio: 16 / 9,

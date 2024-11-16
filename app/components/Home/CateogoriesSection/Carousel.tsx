@@ -49,7 +49,7 @@ const Carousel = ({
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging || !carouselRef.current) return;
     const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) ; // Scroll Speed
+    const walk = Math.ceil(x - startX) ; // Scroll Speed
     carouselRef.current.scrollTo({
       left: scrollLeft - walk,
       behavior: "smooth",
@@ -80,13 +80,13 @@ const Carousel = ({
           return (
             <div
               key={index}
-              className={`carousel-item flex flex-col justify-end items-center p-3 gap-2 flex-shrink-0 select-none rounded-2xl transition-all duration-500 ease-out sm:p-1`}
+              className={`carousel-item flex flex-col justify-end items-center p-3 gap-2 flex-shrink-0 select-none rounded-2xl transition-all duration-500 ease-out scroll-smooth sm:p-1`}
               draggable={false}
               style={{
                 backgroundImage: `url(${
                   item.imgSrc != ""
                     ? item.imgSrc
-                    : "/ExtraSections/TravelSection1/default.png"
+                    : "/Home/ExtraSections/TravelSection1/default.png"
                 })`,
                 backgroundSize: `${item.imgSrc ? "100% 100%" : "cover"}`,
                 backgroundRepeat: "no-repeat",

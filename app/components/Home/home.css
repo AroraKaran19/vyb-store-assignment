@@ -299,6 +299,7 @@
     -webkit-scroll-snap-type: y mandatory;
     -ms-scroll-snap-type: y mandatory;
     height: 50vh;
+    scrollbar-width: thin;
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel .get-started-template {
@@ -325,5 +326,12 @@
 }
 
 .home-page .get-started-section .get-started-section_templates .get-started-carousel .get-started-template .get-started-template_image img {
-    max-height: clamp(10rem, 25vw, 19rem);
+    height: clamp(7rem, 25vw, 19rem);
+}
+
+/* FAQ Section */
+
+.home-page .faq-section {
+    padding-top: clamp(1rem, 5vw, 3rem);
+    gap: clamp(0.5rem, 15vw, 2.25rem);
 }
