@@ -47,7 +47,7 @@ const AuthenticationContainer = () => {
     try {
       validationSchema.parse({ email, password, username });
       if (isLogin) {
-        dispatch(setUserData({ email, username: "JohnDoe" }));
+        dispatch(setUserData({ email, username: "Test" }));
       } else {
         dispatch(setUserData({ email, username }));
       }
