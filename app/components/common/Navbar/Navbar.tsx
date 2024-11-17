@@ -187,7 +187,7 @@ const Navbar = () => {
             ) : (
               <>
                 <div className="authentication-btn w-full flex gap-5 px-4 py-2 bg-white active:bg-white/80 text-black rounded-2xl my-5 cursor-pointer"
-                  onClick={() => {setMenuOpen(false); router.push("/authentication")}}>
+                  onClick={() => {toggleMenu(); router.push("/authentication")}}>
                   <p>Login</p>
                   <div className="login-icon">
                     <svg
